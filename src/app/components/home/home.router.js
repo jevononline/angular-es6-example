@@ -19,8 +19,9 @@ export default /*@ngInject*/function ($stateProvider) {
                 let promise = $q((resolve) => {
                     require.ensure([], () => {
                         let module = require('./home.controller').default;
-                        $ocLazyLoad.load({ name: module.name });
-                        resolve(module);
+                        $ocLazyLoad.load({ name: module.name }).then(()=>{
+                            resolve();
+                        });
                     });
                 });
 

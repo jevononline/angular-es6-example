@@ -19,16 +19,18 @@ export default /*@ngInject*/function ($stateProvider) {
                 let aboutControllerPromise = $q((resolve) => {
                     require.ensure([], () => {
                         let module = require('./about.controller').default;
-                        $ocLazyLoad.load({ name: module.name });
-                        resolve(module);
+                        $ocLazyLoad.load({ name: module.name }).then(()=>{
+                            resolve();
+                        });
                     });
                 });
 
                 let reverseFilterPromise = $q((resolve) => {
                     require.ensure([], () => {
 
-                        $ocLazyLoad.load({ name: require('../../shared/reverse/reverse.filter').default.name });
-                        resolve();
+                        $ocLazyLoad.load({ name: require('../../shared/reverse/reverse.filter').default.name }).then(()=>{
+                            resolve();
+                        });
                     });
                 });
 
