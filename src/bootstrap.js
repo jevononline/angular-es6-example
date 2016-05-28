@@ -1,4 +1,3 @@
-'use strict';
 import './assets/less/bootstrap.less';
 import angular from 'angular';
 

@@ -1,4 +1,4 @@
-'use strict';
+
 import angular from 'angular';
 import AbouteModule from './about.module';
 class AboutController {

@@ -1,4 +1,4 @@
-'use strict';
+
 import angular from 'angular';
 import HomeModule from './home.module';
 class HomeController {

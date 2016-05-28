@@ -1,4 +1,3 @@
-'use strict';
 import angular from 'angular';
 import AppModule from './app.module';
 class AppController {
