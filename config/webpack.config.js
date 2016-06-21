@@ -3,7 +3,6 @@ let path = require('path');
 let webpack = require('webpack');
 
 let CommonChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-let DedupePlugin = webpack.optimize.DedupePlugin;
 
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,7 +10,6 @@ let CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 let config = {
-    devtool: 'inline-source-map',
     entry: {
         app: path.resolve('./src/bootstrap.js'),
         vender: ['angular', 'angular-route', 'angular-ui-router', 'angular-ui-bootstrap', 'oclazyload']
@@ -44,14 +42,14 @@ let config = {
             { test: /\.ttf$/, loader: 'file-loader?name=[name].[ext]' },
             { test: /\.eot$/, loader: 'file-loader?name=[name].[ext]' },
             { test: /\.svg$/, loader: 'file-loader?name=[name].[ext]' },
+            { test: /\.gif$/, loader: 'file-loader?name=[name].[ext]' },
             {
                 test: /\.html$/,
-                loader: 'raw-loader'
+                loader: 'html-loader?interpolate'
             }
         ]
     },
     plugins: [
-        new DedupePlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve('./src/index.html')
         }),

@@ -6,6 +6,9 @@
         "jasmine": true,
         "protractor": true
     },
+    "globals":{
+        "ENV": true
+    },
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"

@@ -18,8 +18,8 @@ export default /*@ngInject*/ ($stateProvider) => {
             load: ($q, $ocLazyLoad) => {
                 let promise = $q((resolve) => {
                     require.ensure([], () => {
-                        let module = require('./home.controller').default;
-                        $ocLazyLoad.load({ name: module.name }).then(()=>{
+                        let module = require('./home.controller');
+                        $ocLazyLoad.load({ name: module.name }).then(() => {
                             resolve();
                         });
                     });
@@ -30,4 +30,4 @@ export default /*@ngInject*/ ($stateProvider) => {
         }
     });
 
-}
+};

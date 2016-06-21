@@ -1,10 +1,10 @@
 
 
-import AppModule from '../../app.module';
+import SharedModule from '../shared.module';
 import './reverse.filter.js';
 
 describe('reverse.filter', () => {
-    beforeEach(angular.mock.module(AppModule.name));
+    beforeEach(angular.mock.module(SharedModule.name));
 
     describe('reverse', () => {
 

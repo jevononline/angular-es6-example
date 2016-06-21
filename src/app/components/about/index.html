@@ -1,7 +1,11 @@
 <div class="h4">About Page</div>
 <div ng-bind="'abc'|reverse"></div>
-<div ng-bind="about.count"></div>
 <div>
+    <div ng-bind="about.count"></div>
     <button class="btn btn-success" ng-click="about.increase()">Increase</button>
     <button class="btn btn-danger" ng-click="about.decrease()">Decrease</button>
+</div>
+<div ng-bind="about.cost|number:AppConfig.fractionSize"></div>
+<div>
+    <img src="${require('assets/img/41st-anniversary-of-the-discovery-of-lucy-5736109501841408-hp2x.gif')}">
 </div>

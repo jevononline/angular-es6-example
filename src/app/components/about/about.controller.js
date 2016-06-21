@@ -6,6 +6,7 @@ class AboutController {
     constructor($http) {
         this.$http = $http;
         this.count = 0;
+        this.cost = 123456789.987654321;
     }
     increase() {
         this.count++;

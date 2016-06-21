@@ -24,7 +24,7 @@ export default /*@ngInject*/function ($urlRouterProvider, $stateProvider) {
             load: ($q, $ocLazyLoad) => {
                 let promise = $q((resolve) => {
                     require.ensure([], () => {
-                        let module = require('./app.controller').default;//babel6 export default
+                        let module = require('./app.controller');
                         $ocLazyLoad.load({ name: module.name }).then(()=>{
                             resolve();
                         });
