@@ -50,8 +50,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "rimraf dist && webpack --config ./config/webpack.production.config.js --progress",
-    "dev": "webpack-dev-server --config ./config/webpack.dev.config.js --history-api-fallback --inline --progress --content-base ./src --port 8080",
+    "build:production": "rimraf dist && webpack --config ./config/webpack.build.config.js --define ENV='\"build:production\"' --progress",
+    "build:staging":    "rimraf dist && webpack --config ./config/webpack.build.config.js --define ENV='\"build:staging\"' --progress",
+    "build:test":       "rimraf dist && webpack --config ./config/webpack.build.config.js --define ENV='\"build:test\"' --progress",
+    "dev": "webpack-dev-server --config ./config/webpack.dev.config.js --define ENV='\"dev\"' --history-api-fallback --inline --progress --content-base ./src --port 8080",
     "test": "karma start ./config/karma.conf.js",
     "test:ci": "karma start ./config/karma.conf.js --single-run",
     "e2e": "protractor ./config/protractor.conf.js"

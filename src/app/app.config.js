@@ -1,7 +1,7 @@
 import ApiConfig from './app.api.config';
-import ApiProductionConfig from './app.api.production.config.js';
+import ApiBuildConfig from './app.api.build.config.js';
 
 export default Object.assign({
     //config
-    fractionSize:2
-}, ENV === 'production' ? ApiProductionConfig : ApiConfig);
+    fractionSize: 2
+}, Object.assign(ApiConfig, ApiBuildConfig)[ENV]);

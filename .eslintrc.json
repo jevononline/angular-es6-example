@@ -7,6 +7,7 @@
         "protractor": true
     },
     "globals":{
+        "MODE": true,
         "ENV": true
     },
     "extends": "eslint:recommended",

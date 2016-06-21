@@ -7,8 +7,5 @@ config.devtool = 'inline-source-map';
 
 
 
-config.plugins.push(new webpack.DefinePlugin({
-    ENV: '"dev"'
-}));
-module.exports = config;  
-    
+
+module.exports = config;
