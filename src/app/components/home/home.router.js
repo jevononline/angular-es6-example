@@ -4,12 +4,11 @@ export default /*@ngInject*/ ($stateProvider) => {
         url: '/',
         /*@ngInject*/
         templateProvider: ($q) => {
-            let promise = $q((resolve) => {
+            return $q((resolve) => {
                 require.ensure([], () => {
                     resolve(require('./index.html'));
                 });
             });
-            return promise;
         },
         controller: 'HomeController',
         controllerAs: 'home',
