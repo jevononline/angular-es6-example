@@ -17,7 +17,8 @@ let config = {
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
-        path: path.resolve('./dist')
+        path: path.resolve('./dist'),
+        publicPath: '/'
     },
     module: {
         preLoaders: [
