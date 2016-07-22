@@ -9,7 +9,7 @@ export default /*@ngInject*/function ($urlRouterProvider, $stateProvider) {
         templateProvider: ($q) => {
 
             let promise = $q((resolve) => {
-                require.ensure([], function () {
+                require.ensure([], () => {
                     resolve(require('./index.html'));
                 });
             });

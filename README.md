@@ -2,9 +2,9 @@
 * angular 1.x
 * es6
 * webpack
-* bootstrap
-* oclazyload
 * angular-ui-router
+* oclazyload
+
 
 ## Install
 ```bash

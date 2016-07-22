@@ -19,10 +19,10 @@ export default angular.module('app', [
     HomeModule.name, AboutModule.name,
     SharedModule.name
 ])
-.constant('AppConfig', AppConfig)
+.constant('appConfig', AppConfig)
 .config(router)
-.run(/*@ngInject*/($rootScope, AppConfig)=>{
+.run(/*@ngInject*/($rootScope, appConfig)=>{
     
-    $rootScope.AppConfig = AppConfig;
+    $rootScope.appConfig = appConfig;
     
 });

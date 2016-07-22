@@ -12,7 +12,7 @@ let CopyWebpackPlugin = require('copy-webpack-plugin');
 let config = {
     entry: {
         app: path.resolve('./src/bootstrap.js'),
-        vender: ['angular', 'angular-route', 'angular-ui-router', 'angular-ui-bootstrap', 'oclazyload']
+        vendor: path.resolve('./src/vendor.js')
     },
     output: {
         filename: '[name].bundle.js',
