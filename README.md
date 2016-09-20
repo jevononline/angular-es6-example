@@ -30,6 +30,4 @@ npm run e2e
 ```
 
 ## Deploy
-`npm run build:test`
-`npm run build:staging`
-`npm run build:production`
+`npm run build`
