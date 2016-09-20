@@ -10,8 +10,7 @@ let CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let config = {
     entry: {
-        app: path.join(__dirname, '../src/bootstrap.js'),
-        //vendor: path.join(__dirname, '../src/vendor.js')
+        app: path.join(__dirname, '../src/bootstrap.js')
     },
     output: {
         filename: '[name].bundle.js',
@@ -53,7 +52,7 @@ let config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../src/index.html')
         }),
-        //new webpack.optimize.CommonsChunkPlugin('vendor', '[name].bundle.js'),
+        //new webpack.optimize.CommonsChunkPlugin(...),
         new ExtractTextPlugin('[name].css')
     ],
     resolve: {
