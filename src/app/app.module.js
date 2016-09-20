@@ -1,9 +1,8 @@
 import angular from 'angular';
-
 import 'angular-route';
 import 'angular-ui-router';
-import 'oclazyload';
 import 'angular-ui-bootstrap';
+import 'oclazyload';
 
 import HomeModule from './components/home/home.module';
 import AboutModule from './components/about/about.module';

@@ -19,7 +19,7 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            path.resolve('test-context.js')
+            path.join(__dirname, '../test-context.js')
         ],
 
 
@@ -31,7 +31,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            [path.resolve('test-context.js')]: ['webpack', 'sourcemap']
+            [path.join(__dirname, '../test-context.js')]: ['webpack', 'sourcemap']
         },
 
         // test results reporter to use
@@ -39,7 +39,7 @@ module.exports = function (config) {
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ['progress', 'coverage'],
         coverageReporter: {
-            dir: path.resolve('coverage/'),
+            dir: path.join(__dirname, '../coverage'),
             reporters: [
                 { type: 'html' }
             ]

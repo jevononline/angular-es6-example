@@ -8,7 +8,7 @@ config.output = {};
 config.module.preLoaders.push({
     test: /\.js$/,
     loader: 'isparta-loader',
-    include: path.resolve('./src'),
+    include: path.join(__dirname, '../src'),
     exclude: [/\.spec\.js$/, /\.e2e\.js$/]
 });
 config.plugins = [];

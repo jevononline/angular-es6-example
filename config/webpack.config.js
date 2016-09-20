@@ -2,7 +2,6 @@
 let path = require('path');
 let webpack = require('webpack');
 
-let CommonChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,8 +10,8 @@ let CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let config = {
     entry: {
-        app: path.resolve('./src/bootstrap.js'),
-        vendor: path.resolve('./src/vendor.js')
+        app: path.join(__dirname, '../src/bootstrap.js'),
+        //vendor: path.join(__dirname, '../src/vendor.js')
     },
     output: {
         filename: '[name].bundle.js',
@@ -52,17 +51,17 @@ let config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve('./src/index.html')
+            template: path.join(__dirname, '../src/index.html')
         }),
-        new CommonChunkPlugin('vender', '[name].bundle.js'),
+        //new webpack.optimize.CommonsChunkPlugin('vendor', '[name].bundle.js'),
         new ExtractTextPlugin('[name].css')
     ],
     resolve: {
-        root: [path.resolve('./src'), path.resolve('./node_modules')],
+        root: [path.join(__dirname, '../src'), path.join(__dirname, '../node_modules')],
         extensions: ['', '.js']
     },
     eslint:{
-        configFile: './.eslintrc.json'
+        configFile: path.join(__dirname, '../.eslintrc.json')
     }
 };
 

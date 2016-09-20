@@ -50,7 +50,7 @@
   },
   "scripts": {
     "build": "rimraf dist && webpack --config ./config/webpack.build.config.js --progress",
-    "dev": "webpack-dev-server --config ./config/webpack.dev.config.js --progress --inline --content-base ./src --port 8080",
+    "dev": "webpack-dev-server --config ./config/webpack.dev.config.js --progress",
     "test": "karma start ./config/karma.conf.js",
     "test:ci": "karma start ./config/karma.conf.js --single-run",
     "e2e": "protractor ./config/protractor.conf.js"
