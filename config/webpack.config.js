@@ -10,23 +10,23 @@ let CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let config = {
     entry: {
-        app: path.join(__dirname, '../src/bootstrap.js')
+        app: path.resolve(__dirname, '../src/bootstrap.js')
     },
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
-        path: path.resolve('./dist'),
+        path: path.resolve(__dirname, '../dist'),
         publicPath: '/'
     },
     module: {
         preLoaders: [
-            { test: /\.js$/, loader: 'eslint-loader', include: path.resolve('./src') }
+            { test: /\.js$/, loader: 'eslint-loader', include: path.resolve(__dirname, './src') }
         ],
         loaders: [
             {
                 test: /\.js$/,
                 loader: 'ng-annotate-loader!babel-loader',
-                include: path.resolve('./src')
+                include: path.resolve(__dirname, './src')
             },
             {
                 test: /\.css$/,
@@ -50,17 +50,17 @@ let config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../src/index.html')
+            template: path.resolve(__dirname, '../src/index.html')
         }),
         //new webpack.optimize.CommonsChunkPlugin(...),
         new ExtractTextPlugin('[name].css')
     ],
     resolve: {
-        root: [path.join(__dirname, '../src'), path.join(__dirname, '../node_modules')],
+        root: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules')],
         extensions: ['', '.js']
     },
     eslint:{
-        configFile: path.join(__dirname, '../.eslintrc.json')
+        configFile: path.resolve(__dirname, '../.eslintrc.json')
     }
 };
 
