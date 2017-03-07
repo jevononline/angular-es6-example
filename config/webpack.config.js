@@ -26,7 +26,7 @@ let config = {
             {
                 test: /\.js$/,
                 loader: 'ng-annotate-loader!babel-loader',
-                include: path.resolve(__dirname, './src')
+                // include: path.resolve(__dirname, './src')
             },
             {
                 test: /\.css$/,
